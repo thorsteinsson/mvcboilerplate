@@ -159,7 +159,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
