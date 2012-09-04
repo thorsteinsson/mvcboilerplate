@@ -7,9 +7,9 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 
-namespace MVCBoilerplate.App_Code
+namespace MVCBoilerplate.Helpers
 {
-    public static class Helpers
+    public static class HtmlHelpers
     {
         public static IHtmlString MenuListItem(this HtmlHelper helper, string linkText, string actionName, string controllerName)
         {
