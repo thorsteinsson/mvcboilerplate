@@ -1,0 +1,41 @@
+﻿@model MVCBoilerplate.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Create a new account.</h2>
+</hgroup>
+
+@using (Html.BeginForm("Register", "Account", new { }, FormMethod.Post, new { @class = "form-horizontal" })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <legend>Registration Form</legend>
+    <div class="control-group">
+        @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.UserName)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+        <div class="controls">
+            @Html.PasswordFor(m => m.Password)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+        <div class="controls">
+            @Html.PasswordFor(m => m.ConfirmPassword)
+        </div>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

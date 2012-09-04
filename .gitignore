@@ -2,5 +2,15 @@
 bin
 obj
 
+# NuGet packages
+packages
+
 # mstest test results
 TestResults
+
+# User files
+*.user
+*.suo
+
+# Database log files
+*.ldf

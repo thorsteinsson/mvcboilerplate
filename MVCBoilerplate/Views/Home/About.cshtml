@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<div class="row">
+    <div class="span8">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+
+        <article>
+            <p>
+                Use this area to provide additional information.
+            </p>
+
+            <p>
+                Use this area to provide additional information.
+            </p>
+
+            <p>
+                Use this area to provide additional information.
+            </p>
+        </article>
+    </div>
+    <aside class="span4">
+        <h3>Aside Title</h3>
+        <p>
+            Use this area to provide additional information.
+        </p>
+        <ul class="nav nav-tabs nav-stacked">
+            @Html.MenuListItem("Home", "Index", "Home")
+            @Html.MenuListItem("About", "About", "Home")
+            @Html.MenuListItem("Contact", "Contact", "Home")
+        </ul>
+    </aside>
+</div>

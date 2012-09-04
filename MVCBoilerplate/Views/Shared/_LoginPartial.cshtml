@@ -1,0 +1,20 @@
+﻿@if (Request.IsAuthenticated) {
+    <text>
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post)) {
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn">Log off</button>
+        }
+    </text>
+} else {
+    <text>
+        @using (Html.BeginForm("LogIn", "Account", FormMethod.Post)) {
+            @Html.AntiForgeryToken()
+            @Html.TextBox("email", string.Empty, new { @class = "span2", placeholder = "Email" })
+            @Html.Password("password", string.Empty, new { @class = "span2", placeholder = "Password" })
+            <button type="submit" class="btn">Sign in</button>
+        }
+        <span class="nav-header">Other services</span>
+        @Html.Action("ExternalLoginsList", "Account", new { ReturnUrl = ViewBag.ReturnUrl, ShowLegend = false })
+    </text>
+}
