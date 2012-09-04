@@ -11,6 +11,3 @@ TestResults
 # User files
 *.user
 *.suo
-
-# Database log files
-*.ldf
