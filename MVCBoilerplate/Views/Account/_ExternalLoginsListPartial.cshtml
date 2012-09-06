@@ -11,7 +11,7 @@ else
     {
         @Html.AntiForgeryToken()
         if (ViewBag.ShowLegend) {
-            <legend>Log in using another service</legend>
+            <legend>@ViewBag.Legend</legend>
         }
         
         foreach (AuthenticationClientData p in Model)

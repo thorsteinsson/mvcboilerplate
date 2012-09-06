@@ -301,10 +301,11 @@ namespace MVCBoilerplate.Controllers
 
         [AllowAnonymous]
         [ChildActionOnly]
-        public ActionResult ExternalLoginsList(string returnUrl, bool? showLegend)
+        public ActionResult ExternalLoginsList(string returnUrl, string legend)
         {
             ViewBag.ReturnUrl = returnUrl;
-            ViewBag.ShowLegend = showLegend.HasValue ? showLegend.Value : true;
+            ViewBag.ShowLegend = !string.IsNullOrEmpty(legend);
+            ViewBag.Legend = legend;
             return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
         }
 

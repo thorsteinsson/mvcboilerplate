@@ -10,13 +10,11 @@
 
 <div class="row">
     <section class="span6">
-        <h2>Use a local account to log in.</h2>
-    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" }))
-    {
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" })) {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-        <legend>Log in Form</legend>
+        <legend>Use a local account to log in.</legend>
         <div class="control-group">
             @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
             <div class="controls">
@@ -49,8 +47,7 @@
     </section>
 
     <section class="span6">
-        <h2>Use another service to log in.</h2>
-        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl, Legend = "Use another service to log in." })
     </section>
 </div>
 
